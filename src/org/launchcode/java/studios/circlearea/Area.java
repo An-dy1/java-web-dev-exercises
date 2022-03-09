@@ -9,8 +9,13 @@ public class Area {
 
         System.out.println("What's the radius of your circle? \n");
         Double radius = input.nextDouble();
+        if(radius < 0 ) {
+            System.out.println("");
+        }
+
         Double area = Circle.getArea(radius);
 
         System.out.println("The area of your circle with radius " + radius + " is: " + area);
+        input.close();
     }
 }
