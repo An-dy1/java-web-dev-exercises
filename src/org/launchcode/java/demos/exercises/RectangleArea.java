@@ -2,7 +2,7 @@ package org.launchcode.java.demos.exercises;
 
 import java.util.Scanner;
 
-public class CircleArea {
+public class RectangleArea {
 
     public static void main(String[] args) {
 
