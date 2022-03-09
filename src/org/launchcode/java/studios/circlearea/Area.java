@@ -12,5 +12,6 @@ public class Area {
         Double area = Circle.getArea(radius);
 
         System.out.println("The area of your circle with radius " + radius + " is: " + area);
+        input.close();
     }
 }
