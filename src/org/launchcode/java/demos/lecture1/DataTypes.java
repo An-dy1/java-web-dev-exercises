@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.lecture;
+package org.launchcode.java.demos.lecture1;
 
 public class DataTypes {
 
