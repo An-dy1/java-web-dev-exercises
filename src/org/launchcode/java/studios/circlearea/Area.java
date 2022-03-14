@@ -8,38 +8,13 @@ public class Area {
         Scanner input = new Scanner(System.in);
 
         System.out.println("What's the radius of your circle?");
-
         double radius;
-        do {
-            System.out.println("Please enter a positive decimal:");
-            while(!input.hasNextDouble()) {
-                System.out.println("That is not a decimal, enter another choice:");
-                input.next();
-            }
-            radius = input.nextDouble();
-        } while(radius <= 0);
 
-        System.out.println("Your radius is: " + radius);
+
+        double area = Circle.getArea(radius);
+        System.out.println("Your circle's area is: " + area);
         input.close();
 
 
     }
 }
-
-
-
-//System.out.println("Please enter a positive decimal for your radius: ");
-//        while(!input.hasNextDouble()){
-//        System.out.println("That isn't a decimal, enter another choice");
-//        input.next();
-//    }
-//    radius = input.nextDouble();
-//
-//        while(radius <= 0) {
-//        System.out.println("That is a negative number, please choose again: ");
-//        radius = input.nextDouble();
-//    }
-//
-//        System.out.println("Your radius is: " + radius);
-//        input.close();
-//}
