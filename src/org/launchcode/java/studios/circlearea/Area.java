@@ -11,9 +11,9 @@ public class Area {
         double radius;
 
 
-        double area = Circle.getArea(radius);
-        System.out.println("Your circle's area is: " + area);
-        input.close();
+//        double area = Circle.getArea(radius);
+//        System.out.println("Your circle's area is: " + area);
+//        input.close();
 
 
     }
