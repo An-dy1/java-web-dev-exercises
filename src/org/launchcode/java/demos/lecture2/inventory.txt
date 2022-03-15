@@ -1,0 +1,11 @@
+asparagus:12
+oranges:15
+lingonberries:6
+kidney beans:0
+jack fruit:2
+papaya:4
+butter lettuce:14
+raspberries:20
+grape tomatoes:24
+Hawaiian rolls:0
+broccolini: 1

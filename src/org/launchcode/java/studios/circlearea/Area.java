@@ -7,11 +7,13 @@ public class Area {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("What's the radius of your circle? \n");
-        Double radius = input.nextDouble();
-        Double area = Circle.getArea(radius);
+        System.out.println("What's the radius of your circle?");
+        double radius;
 
-        System.out.println("The area of your circle with radius " + radius + " is: " + area);
-        input.close();
+
+//        double area = Circle.getArea(radius);
+//        System.out.println("Your circle's area is: " + area);
+//        input.close();
+
     }
 }
