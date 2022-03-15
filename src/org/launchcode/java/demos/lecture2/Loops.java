@@ -11,7 +11,7 @@ public class Loops {
         String word = input.nextLine();
 
         // continue to prompt the user for a new word if it's shorter than 12 characters
-        // write it as a do-while
+        // is a while loop or do-while loop more appropriate?
 
 
         System.out.println("Nice, I love the word " + word);

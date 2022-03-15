@@ -21,12 +21,14 @@ public class LectureExercise {
         System.out.println(fullList);
 
         HashMap<String, Integer> finalList = new HashMap<>();
+
         // then, find out if enough items are in stock; create a list of in-stock items
         for(Map.Entry<String, Integer> desiredItem : fullList.entrySet()) {
             // get the corresponding entry in the inventoryFromFile
             Integer itemQuantity = inventoryFromFile.get(desiredItem.getKey());
 
-            if(itemQuantity != 0 && itemQuantity >= desiredItem.getValue()) {
+            // account for items that are not in the inventory; items that are not in stock; and items that have fewer available than desired
+            if(itemQuantity != null && itemQuantity != 0 && itemQuantity >= desiredItem.getValue()) {
                 finalList.put(desiredItem.getKey(), desiredItem.getValue());
             }
         }
@@ -95,4 +97,5 @@ public class LectureExercise {
         input.close();
         return finalList;
     }
+
 }
