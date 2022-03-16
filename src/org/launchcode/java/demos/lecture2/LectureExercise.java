@@ -14,15 +14,16 @@ public class LectureExercise {
             System.out.println( entry.getKey() + " => " + entry.getValue() );
         }
 
+        // could also ask the user for these items, or retrive them from a file, but I'm hard-coding for simplicity's sake
         ArrayList<String> shoppingList = new ArrayList<>(Arrays.asList("raspberries", "kidney beans", "oranges", "hawaiian rolls"));
 
         // next step: create a hashmap from this shoppingList by asking the user how many of each item they want
         HashMap<String, Integer> fullList = generateShoppingList(shoppingList);
-        System.out.println(fullList);
 
+        // instantiate a new hashmap to hold the items that are in stock and have at least the user's desired quantity
         HashMap<String, Integer> finalList = new HashMap<>();
 
-        // then, find out if enough items are in stock; create a list of in-stock items
+        // then, find out if enough items are in stock; create a map of in-stock items
         for(Map.Entry<String, Integer> desiredItem : fullList.entrySet()) {
             // get the corresponding entry in the inventoryFromFile
             Integer itemQuantity = inventoryFromFile.get(desiredItem.getKey());
@@ -49,12 +50,12 @@ public class LectureExercise {
             // new file object
             File file = new File("/Users/andreajohnson/workspaces/learning/CoderGirl/java-practice/java-web-dev-exercises/src/org/launchcode/java/demos/lecture2/inventory.txt");
 
-            // new BufferedReader from the file
+            // new BufferedReader to read the filee
             reader = new BufferedReader(new FileReader(file));
 
             String line;
 
-            // read the file by line
+            // read the file by line - have to readLine within the while loop or else it will trigger an infinite loop
             while((line = reader.readLine()) != null) {
 
                 // split line by :
@@ -64,7 +65,7 @@ public class LectureExercise {
                 String name = parts[0].trim().toLowerCase();
                 Integer number = Integer.parseInt(parts[1].trim());
 
-                if(!name.equals("") && !number.equals("")) {
+                if(!name.equals("")) {
                     newMap.put(name, number);
                 }
             }
@@ -83,6 +84,11 @@ public class LectureExercise {
         return newMap;
     }
 
+    /**
+     *
+     * @param list an arrayList to be turned into a map that includes the item and its corresponding desired amount
+     * @return a hashmap of the shopping items with their desired quantity
+     */
     private static HashMap generateShoppingList(ArrayList<String> list) {
         Scanner input = new Scanner(System.in);
         String quantity = null;
