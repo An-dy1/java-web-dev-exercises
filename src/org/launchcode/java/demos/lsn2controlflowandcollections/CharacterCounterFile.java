@@ -14,7 +14,6 @@ public class CharacterCounterFile {
         String myString = null;
         HashMap<Character, Integer> characterCounts = new HashMap<>();
 
-
         try {
             File myStringFile = new File("/Users/andreajohnson/workspaces/learning/CoderGirl/java-practice/java-web-dev-exercises/src/org/launchcode/java/demos/lsn2controlflowandcollections/string.txt");
 
@@ -34,12 +33,15 @@ public class CharacterCounterFile {
         // 5 - do the same thing
         char[] charactersInString = myString.toLowerCase().toCharArray();
         for (char character : charactersInString) {
-            // bonus 3: exclude non-alphabet characters
+            // bonus 3: exclude non-alphabet characters using the isLetter method on the Character class
+            // could also use RegEx here to compare each character to a list of valid characterss
             boolean isLetter = Character.isLetter(character);
             if(isLetter) {
+                // if the character is already in the characterCounts hashMap, create a new key for it, and increment its value by one
                 if (characterCounts.containsKey(character)) {
                     characterCounts.put(character, characterCounts.get(character) + 1);
                 }
+                // otherwise, just put the character as a key in the hashMap and set its value to 1
                 else {
                     characterCounts.put(character, 1);
                 }
