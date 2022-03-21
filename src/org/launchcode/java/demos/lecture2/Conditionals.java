@@ -17,6 +17,10 @@ public class Conditionals {
         // temp between 70-80: tropical times
         // temp between 80-90: hot and humid
 
+        // 1, code the above with if-else statement
+
+        // 2, code the above with a switch
+
         input.close();
     }
 }
