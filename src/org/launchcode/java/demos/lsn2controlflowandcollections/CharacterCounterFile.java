@@ -12,7 +12,7 @@ public class CharacterCounterFile {
 
   public static void main(String[] args) {
     // 2 declare variables to hold the String we want to count characters in, and the HashMap that will hold the characters and their counts
-    String myString = null;
+    String stringToCount = null;
     HashMap<Character, Integer> characterCounts = new HashMap<>();
 
     try {
@@ -24,16 +24,18 @@ public class CharacterCounterFile {
 
       // 4 read the text file by line and as long as there are new lines, add its value to myString
       while (stringReader.hasNextLine()) {
-        myString = stringReader.nextLine();
+        stringToCount += stringReader.nextLine();
       }
+
+      stringReader.close();
 
     } catch (FileNotFoundException exception) {
       System.out.println("An error occurred.");
       exception.printStackTrace();
     }
 
-    // 5 - make the character counts case-insensitive by making all characters lowercase; then turn the string into a character array
-    char[] charactersInString = myString.toLowerCase().toCharArray();
+    // 5 - bonus 1: make the character counts case-insensitive by making all characters lowercase; then turn the string into a character array
+    char[] charactersInString = stringToCount.toLowerCase().toCharArray();
     for (char character : charactersInString) {
       // bonus 3: exclude non-alphabet characters using the isLetter method on the Character class
       // could also use RegEx here to compare each character to a list of valid characterss

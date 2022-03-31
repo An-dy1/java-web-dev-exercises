@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.lecture2;
+package org.launchcode.java.demos.lsn2controlflowandcollections.lecture2;
 
 import java.io.*;
 import java.util.*;
