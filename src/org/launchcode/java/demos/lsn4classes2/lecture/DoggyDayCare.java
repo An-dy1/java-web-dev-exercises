@@ -13,9 +13,10 @@ public class DoggyDayCare {
     Dog wesley = new Dog("Wesley", "Andie");
     Dog echo = new Dog("Echo", "Chae");
 
-    Room small = new Room();
-    Room medium = new Room();
-    Room large = new Room();
+    // will need to update method once constructor for Room is finished
+    Room small = new Room("AJ", "small", 12);
+    Room medium = new Room("DJ", "medium", 15);
+    Room large = new Room("CJ", "large", 20);
 
     // set size of dogs on each instance
     /**
@@ -23,9 +24,17 @@ public class DoggyDayCare {
      * medium - james, spot
      * large - barry, wesley
      */
-    millie.setSize("largeish");
+    millie.setSize("small");
+    echo.setSize("small");
+    james.setSize("medium");
+    spot.setSize("medium");
+    barry.setSize("large");
+    wesley.setSize("large");
 
     // assign dogs to rooms based on size
+    small.addDogToRoom(millie);
+    small.addDogToRoom(echo);
+    small.addDogToRoom(millie);
 
     // print room summary of each room
 
