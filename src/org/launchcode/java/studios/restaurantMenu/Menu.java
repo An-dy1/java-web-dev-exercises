@@ -34,22 +34,38 @@ public class Menu {
 
   // *1 - A way to add and remove menu items - with bonus solution
   // better or different way?
+//  public void addMenuItem(MenuItem newItem) {
+//    boolean alreadyExists = false;
+//
+//    for (int i = 0; i < items.size(); i++) {
+//      if (newItem.newEquals(items.get(i))) {
+//        System.out.println("the item '" + newItem.getDescription() + "' already exists");
+//        alreadyExists = true;
+//      }
+//    }
+//
+//    if (!alreadyExists) {
+//      this.items.add(newItem);
+//    }
+//
+//  }
+
+  // *1 add menu item
   public void addMenuItem(MenuItem newItem) {
-    boolean alreadyExists = false;
 
     for (int i = 0; i < items.size(); i++) {
       if (newItem.newEquals(items.get(i))) {
         System.out.println("the item '" + newItem.getDescription() + "' already exists");
-        alreadyExists = true;
+        return;
+
       }
     }
 
-    if (!alreadyExists) {
-      this.items.add(newItem);
-    }
+    this.items.add(newItem);
 
   }
 
+  // *1 remove menu item
   // * solution has this returning the new current list of items - that could be useful as well
   // * why public and not private?
   public void removeMenuItem(MenuItem itemToRemove) {

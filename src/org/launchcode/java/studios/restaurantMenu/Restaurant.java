@@ -27,15 +27,28 @@ public class Restaurant {
 
     // second way to get items in the April menu
     // * this chunk of code suggests an improvement to the Menu class - what?
+
+    // studio - add menu items with bonus solution
     aprilMenu.addMenuItem(menuItem1);
     aprilMenu.addMenuItem(menuItem2);
     aprilMenu.addMenuItem(menuItem3);
     aprilMenu.addMenuItem(menuItem4);
     aprilMenu.addMenuItem(menuItem5);
 
+    // studio - remove menu items
+    aprilMenu.removeMenuItem(menuItem4);
+
+    // studio - check if a menu item is new
+    System.out.println(menuItem1.checkIfNew());
+
+    // tell when the menu was last updated
+    System.out.println("Menu was last updated on: " + aprilMenu.getLastUpdated());
+
+    // print all menu items
     System.out.println("Here are all of the menu items: \n");
     aprilMenu.printAllMenuItems();
 
+    // print a single menu item
     System.out.println("Might I suggest the: \n");
     aprilMenu.printMenuItem(menuItem2);
 
