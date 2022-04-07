@@ -1,0 +1,3 @@
+Dog{name='Millie', breed='null', age=null, ownerName='Bobbie', timeOfFeeding=null, size='small', idNumber=1}
+Dog{name='Echo', breed='null', age=null, ownerName='Chae', timeOfFeeding=null, size='small', idNumber=6}
+Dog{name='King James', breed='null', age=null, ownerName='Tony', timeOfFeeding=null, size='small', idNumber=2}
