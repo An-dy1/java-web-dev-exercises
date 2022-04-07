@@ -59,75 +59,18 @@ public class Room {
     RoomSummaryFile.generateRoomSummaryFile(dogsInRoom, "/Users/andreajohnson/workspaces/learning/CoderGirl/java-practice/java-web-dev-exercises/src/org/launchcode/java/demos/lsn5unittesting/lecture/summary.txt");
   }
 
-  // check for dogs in room
-
-//  public void addDogToRoom(Dog dogToAdd) {
-//    if (dogToAdd.getSize().toLowerCase() == this.sizeOfDogs.toLowerCase()) {
-//      if ((dogsInRoom != null)) {
-//        if (dogsInRoom.size() < this.roomCapacity) {
-//          for (Dog dog : dogsInRoom) {
-//            if (dogToAdd.equals(dog)) {
-//              throw new IllegalArgumentException("Cannot add the same dog twice");
-//            }
-//          }
-//        } else {
-//          throw new IllegalArgumentException("Room is already at capacity");
-//        }
-//      }
-//    } else {
-//      throw new IllegalArgumentException("Dog is incorrect size");
-//    }
-//
-//    dogsInRoom.add(dogToAdd);
-//  }
-
   public void addDogToRoom(Dog dogToAdd) {
-    // size
-    // room empty or not
-    // room not at capacity
-
-    try {
-      if (dogIsCorrectSize(dogToAdd) && !roomAtCapacity()) {
-        if (dogsInRoom != null) {
-          for (Dog dog : dogsInRoom) {
-            if (dogToAdd.equals(dog)) {
-              throw new IllegalArgumentException("Cannot add the same dog twice");
-            }
-          }
+    if ((dogsInRoom != null)) {
+      for (Dog dog : dogsInRoom) {
+        if (dogToAdd.equals(dog)) {
+          System.out.println("Dog already in room");
+          return;
         }
-      } else {
-        throw new IllegalArgumentException("Cannot add dog");
       }
-
-      dogsInRoom.add(dogToAdd);
-      
-    } catch (Exception e) {
-      System.out.println(e);
     }
 
+    dogsInRoom.add(dogToAdd);
 
   }
 
-  private boolean dogIsCorrectSize(Dog dogToCheck) {
-    if (dogToCheck.getSize().toLowerCase() == this.sizeOfDogs.toLowerCase()) {
-      return true;
-    } else {
-      throw new IllegalArgumentException("Dog is not correct size");
-    }
-
-  }
-
-  private boolean roomAtCapacity() {
-    return this.dogsInRoom.size() >= this.roomCapacity;
-  }
-
-  private boolean canAddDog(Dog dogToAdd) {
-    if (!dogIsCorrectSize(dogToAdd)) {
-      throw new IllegalArgumentException("Dog is not correct size");
-    } else if (roomAtCapacity()) {
-      throw new IllegalArgumentException("Room is at capacity");
-    } else {
-      return true;
-    }
-  }
 }
