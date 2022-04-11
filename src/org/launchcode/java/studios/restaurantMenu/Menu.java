@@ -1,6 +1,7 @@
 package org.launchcode.java.studios.restaurantMenu;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Menu {
@@ -32,8 +33,8 @@ public class Menu {
     return items;
   }
 
-  // *1 - A way to add and remove menu items - with bonus solution
-  // better or different way?
+  // *1 - Two ways to add and remove menu items - with bonus solution
+
 //  public void addMenuItem(MenuItem newItem) {
 //    boolean alreadyExists = false;
 //
@@ -57,7 +58,6 @@ public class Menu {
       if (newItem.newEquals(items.get(i))) {
         System.out.println("the item '" + newItem.getDescription() + "' already exists");
         return;
-
       }
     }
 
@@ -68,13 +68,17 @@ public class Menu {
   // *1 remove menu item
   // * solution has this returning the new current list of items - that could be useful as well
   // * why public and not private?
+
   public void removeMenuItem(MenuItem itemToRemove) {
     int indexOfItemToRemove = -1;
+
+    // why use the more verbose for loop syntax here?
     for (int i = 0; i < this.items.size(); i++) {
       if (items.get(i).equals(itemToRemove)) {
         indexOfItemToRemove = i;
       }
     }
+
     this.items.remove(indexOfItemToRemove);
     // return this.items;
   }
@@ -91,8 +95,8 @@ public class Menu {
 
   // *5
   public void printAllMenuItems() {
-    for (int i = 0; i < this.items.size(); i++) {
-      System.out.println(items.get(i).getDescription());
+    for (MenuItem item : items) {
+      System.out.println(item.getDescription());
     }
   }
 

@@ -17,7 +17,7 @@ public class Restaurant {
     Date today = Calendar.getInstance().getTime();
     ArrayList<MenuItem> menuItemsToAdd = new ArrayList<>();
 
-    // one way to get items in the April menu
+    // one way to get items in the April menu - add all items to the array list and pass to constructor
 //    menuItemsToAdd.add(menuItem1);
 //    menuItemsToAdd.add(menuItem2);
 //    menuItemsToAdd.add(menuItem3);
@@ -25,7 +25,7 @@ public class Restaurant {
 //
     Menu aprilMenu = new Menu(today, menuItemsToAdd);
 
-    // second way to get items in the April menu
+    // second way to get items in the April menu - make menu item empty then add them one by one
     // * this chunk of code suggests an improvement to the Menu class - what?
 
     // studio - add menu items with bonus solution
