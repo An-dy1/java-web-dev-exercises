@@ -53,14 +53,12 @@ public class Menu {
 
   // *1 add menu item
   public void addMenuItem(MenuItem newItem) {
-
-    for (int i = 0; i < items.size(); i++) {
-      if (newItem.newEquals(items.get(i))) {
+    for (MenuItem item : items) {
+      if (newItem.newEquals(item)) {
         System.out.println("the item '" + newItem.getDescription() + "' already exists");
         return;
       }
     }
-
     this.items.add(newItem);
 
   }
@@ -69,18 +67,19 @@ public class Menu {
   // * solution has this returning the new current list of items - that could be useful as well
   // * why public and not private?
 
-  public void removeMenuItem(MenuItem itemToRemove) {
+  public ArrayList<MenuItem> removeMenuItem(MenuItem itemToRemove) {
     int indexOfItemToRemove = -1;
 
     // why use the more verbose for loop syntax here?
     for (int i = 0; i < this.items.size(); i++) {
       if (items.get(i).equals(itemToRemove)) {
         indexOfItemToRemove = i;
+        break;
       }
     }
 
     this.items.remove(indexOfItemToRemove);
-    // return this.items;
+    return this.items;
   }
 
   // *3 A way to tell when the menu was last updated

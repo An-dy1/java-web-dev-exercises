@@ -59,18 +59,45 @@ public class Room {
     RoomSummaryFile.generateRoomSummaryFile(dogsInRoom, "/Users/andreajohnson/workspaces/learning/CoderGirl/java-practice/java-web-dev-exercises/src/org/launchcode/java/demos/lsn5unittesting/lecture/summary.txt");
   }
 
+
+//  public void addDogToRoom(Dog dogToAdd) {
+//
+//    if (this.sizeOfDogs == dogToAdd.getSize()) {
+//      if ((dogsInRoom != null)) {
+//        if (dogsInRoom.size() < this.roomCapacity) {
+//          for (Dog dog : dogsInRoom) {
+//            if (dogToAdd.equals(dog)) {
+//              throw new IllegalArgumentException("Dog is already in room");
+//            }
+//          }
+//        } else {
+//          throw new IllegalArgumentException("Room is at capacity");
+//        }
+//      }
+//    } else {
+//      throw new IllegalArgumentException("Dog is incorrect size");
+//    }
+//
+//    dogsInRoom.add(dogToAdd);
+//
+//  }
+
   public void addDogToRoom(Dog dogToAdd) {
-    if ((dogsInRoom != null)) {
-      for (Dog dog : dogsInRoom) {
-        if (dogToAdd.equals(dog)) {
-          System.out.println("Dog already in room");
-          return;
-        }
-      }
+    if (canAddDogToRoom(dogToAdd)) {
+      dogsInRoom.add(dogToAdd);
+    } else {
+      throw new IllegalArgumentException("Cannot add dog to room");
     }
-
-    dogsInRoom.add(dogToAdd);
-
   }
+
+
+  private boolean canAddDogToRoom(Dog dogToCheck) {
+    if (dogToCheck.getSize().toLowerCase() == this.sizeOfDogs.toLowerCase() && this.dogsInRoom.size() < this.roomCapacity && !this.dogsInRoom.contains(dogToCheck)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 
 }
