@@ -1,9 +1,6 @@
-package org.launchcode.java.demos.lsn6inheritance.lecture.projectDetails;
+package org.launchcode.java.demos.lsn6inheritance.lectureComplete.projectDetails;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Scanner;
 
 public abstract class InstallationProject {
 

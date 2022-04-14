@@ -1,10 +1,11 @@
-package org.launchcode.java.demos.lsn6inheritance.lecture.projectDetails;
+package org.launchcode.java.demos.lsn6inheritance.lectureComplete.projectDetails;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 public class HotTubProject extends InstallationProject {
+
+  private boolean jetsAreOn = false;
 
   private static final Map<String, Integer> availableModels = Map.of(
       "Jacuzzi", 12500,
@@ -16,8 +17,16 @@ public class HotTubProject extends InstallationProject {
     super(depth, length, width, desiredStartDate);
   }
 
+  // a method inherited from installation project
   @Override
   public double generateQuote() {
     return 1678.89;
+  }
+
+  // a method unique to hot tubs
+  public void turnOnJets() {
+    if (!jetsAreOn) {
+      jetsAreOn = true;
+    }
   }
 }
