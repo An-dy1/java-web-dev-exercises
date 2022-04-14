@@ -17,7 +17,7 @@ public class Runner {
     firstQuestionAnswers.add("pea");
     Question firstQuestion = new multipleChoice("Which of these is not a fruit?", 1);
 
-    Question secondQuestion = new trueOrFalse("trueOrFalse", "'A' is the most common letter used in the English language", "false");
+    Question secondQuestion = new trueOrFalse("'A' is the most common letter used in the English language", 1);
 
 
     startingQuiz.addQuestionToQuiz(firstQuestion);

@@ -25,7 +25,7 @@ public class Quiz {
 
   public void printQuestions() {
     for (Question question : listOfQuestions) {
-      System.out.println(question.getQuestionText());
+      
     }
   }
 }

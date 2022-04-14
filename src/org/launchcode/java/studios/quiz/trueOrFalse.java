@@ -5,14 +5,19 @@ import java.util.Arrays;
 
 public class trueOrFalse extends Question {
 
-  // can only ever have two answers, one of which is true and one of which is false
-  private String choiceOne = "true";
-  private String choiceTwo = "false";
-  private ArrayList<String> possibleAnswers = new ArrayList<>(Arrays.asList("true", "false"));
+  private boolean answer;
 
+  public trueOrFalse(String questionText, int aPointValue) {
+    super(questionText, aPointValue);
+  }
 
-  public trueOrFalse(String type, String questionText, String correctAnswer) {
-    super(type, questionText, correctAnswer);
+  @Override
+  public void displayAnswers() {
 
+  }
+
+  @Override
+  public int gradeAnswer() {
+    return 0;
   }
 }
