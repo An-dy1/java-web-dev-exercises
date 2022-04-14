@@ -1,6 +1,6 @@
 package org.launchcode.java.demos.lsn6inheritance.technology.src;
 
-public class Computer {
+public class Computer extends AbstractIdManager {
 
   /* FIELDS */
   private int screenSize;
@@ -34,6 +34,7 @@ public class Computer {
   }
 
   public Computer(int screenSize, String amountOfMemory) {
+    super();
     this.screenSize = screenSize;
     this.amountOfMemory = amountOfMemory;
   }
