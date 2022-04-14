@@ -18,5 +18,10 @@ public abstract class InstallationProject {
 
   public abstract double generateQuote();
 
+  // non-abstract methods are inherited but don't have to be implemented
+  public void sayHello() {
+    System.out.println("Hey there");
+  }
+
 
 }

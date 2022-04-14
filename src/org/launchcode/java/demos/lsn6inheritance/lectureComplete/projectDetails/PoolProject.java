@@ -10,11 +10,16 @@ public class PoolProject extends InstallationProject {
       "Royal Swimming Pool", 1999,
       "Walmart", 410
   );
-
-  private boolean isAboveGround = false;
+  private boolean isBelowGround = false;
 
   public PoolProject(double depth, double length, double width, Date desiredStartDate) {
     super(depth, length, width, desiredStartDate);
+  }
+
+  // overloaded constructor
+  public PoolProject(double depth, double length, double width, Date desiredStartDate, boolean isBelowGround) {
+    super(depth, length, width, desiredStartDate);
+    this.isBelowGround = isBelowGround;
   }
 
   // would have inherited from abstract installation project class
@@ -25,8 +30,8 @@ public class PoolProject extends InstallationProject {
     return 12933;
   }
 
-  public boolean setAboveGround() {
-    this.isAboveGround = true;
+  public boolean setBelowGround() {
+    this.isBelowGround = true;
     return true;
   }
 }

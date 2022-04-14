@@ -9,6 +9,8 @@ public class InfinityPoolProject extends PoolProject {
       "Endless Pool", 8895,
       "Infinity Pool", 12360
   );
+  private boolean isMultiSpeed;
+  private double jetSpeed;
 
   public InfinityPoolProject(double depth, double length, double width, Date desiredStartDate) {
     super(depth, length, width, desiredStartDate);
@@ -18,5 +20,9 @@ public class InfinityPoolProject extends PoolProject {
   @Override
   public double generateQuote() {
     return 9873;
+  }
+
+  public void increaseJetSpeed(double increaseToSpeed) {
+    jetSpeed = increaseToSpeed;
   }
 }
