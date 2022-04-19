@@ -6,6 +6,7 @@ import java.util.Map;
 public class HotTubProject extends InstallationProject {
 
   private boolean jetsAreOn = false;
+
   private static final Map<String, Integer> availableModels = Map.of(
       "Jacuzzi", 12500,
       "Hot Spring", 4500,
@@ -25,6 +26,7 @@ public class HotTubProject extends InstallationProject {
   // a method inherited from installation project
   @Override
   public double generateQuote() {
+    System.out.println("A hot tub quote: ");
     return 1678.89;
   }
 

@@ -18,11 +18,11 @@ public class Runner {
     int poolTypeSelection = CustomerInteractions.askCustomerForProjectType();
     double[] dimensions = CustomerInteractions.askCusomterForDimensions();
 
-    System.out.println("pool type: " + poolTypeSelection);
-    System.out.println("dimensions: " + dimensions[0] + " " + dimensions[1] + " " + dimensions[2]);
+//    System.out.println("pool type: " + poolTypeSelection);
+//    System.out.println("dimensions: " + dimensions[0] + " " + dimensions[1] + " " + dimensions[2]);
 
     /*
-     * When one class extends another a field or local variable of the type of the base class
+     * When one class extends another, a field or local variable of the type of the base class,
      * may hold an object that is of the type of the child class.
      */
     InstallationProject newProject = null;
@@ -39,8 +39,10 @@ public class Runner {
         break;
     }
 
-    // would we want to cast the new project?
-    newProject.generateQuote();
+    // would we want to cast the new project to access child class methods?
+
+    // installation class methods only
+    newProject.generateQuote(); // this method is present in installation project class and overridden in the child classes, so it's accessible
     newProject.sayHello();
 
     /*
@@ -48,8 +50,16 @@ public class Runner {
      * If we want access to the child's method's, and we are sure it is of the child class type, we can cast to access
      */
     InstallationProject infinityPoolExample = new InfinityPoolProject(10, 11, 12, today);
+
+    // methods in installation project class
+    infinityPoolExample.sayHello();
     infinityPoolExample.generateQuote();
+
+    // method in Pool class
     ((InfinityPoolProject) infinityPoolExample).setBelowGround();
+
+    // method in Infinity pool class
+    ((InfinityPoolProject) infinityPoolExample).increaseJetSpeed(4);
 
   }
 }

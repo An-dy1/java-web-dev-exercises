@@ -28,9 +28,11 @@ public abstract class Question {
   }
 
 
-  public abstract void displayAnswers();
+  public abstract void displayPossibleAnswers();
 
   public abstract int gradeAnswer();
+
+  public abstract void getAnswers();
 
 
 }

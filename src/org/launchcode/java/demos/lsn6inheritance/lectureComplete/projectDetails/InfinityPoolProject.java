@@ -19,10 +19,12 @@ public class InfinityPoolProject extends PoolProject {
   // would have inherited from pool project, which is inherited from installation project
   @Override
   public double generateQuote() {
+    System.out.println("A infinity pool quote");
     return 9873;
   }
 
   public void increaseJetSpeed(double increaseToSpeed) {
+    System.out.println("Increasing jet speed in the infinity pool class to: " + increaseToSpeed);
     jetSpeed = increaseToSpeed;
   }
 }

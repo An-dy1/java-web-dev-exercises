@@ -10,12 +10,17 @@ public class PoolProject extends InstallationProject {
       "Royal Swimming Pool", 1999,
       "Walmart", 410
   );
+
+  public boolean isBelowGround() {
+    return isBelowGround;
+  }
+
   private boolean isBelowGround = false;
 
   public PoolProject(double depth, double length, double width, Date desiredStartDate) {
     super(depth, length, width, desiredStartDate);
   }
-
+//
   // overloaded constructor
   public PoolProject(double depth, double length, double width, Date desiredStartDate, boolean isBelowGround) {
     super(depth, length, width, desiredStartDate);
@@ -27,6 +32,7 @@ public class PoolProject extends InstallationProject {
   public double generateQuote() {
     // if actually implementing, we could do a calculation based on dimensions and whether the start date were soon or not
     // but for simplicity, I'm just hardcoding a value
+    System.out.println("A pool project quote");
     return 12933;
   }
 

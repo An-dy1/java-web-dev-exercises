@@ -23,9 +23,10 @@ public class Quiz {
     return this.listOfQuestions;
   }
 
-  public void printQuestions() {
-    for (Question question : listOfQuestions) {
-      
+  public void runQuiz() {
+    for(int i = 0; i < listOfQuestions.size(); i++) {
+      listOfQuestions.get(i).printQuestion();
+      listOfQuestions.get(i).displayPossibleAnswers();
     }
   }
 }

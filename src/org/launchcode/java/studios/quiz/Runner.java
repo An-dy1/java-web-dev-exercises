@@ -1,6 +1,7 @@
 package org.launchcode.java.studios.quiz;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Runner {
 
@@ -10,20 +11,15 @@ public class Runner {
     Quiz startingQuiz = new Quiz(quizQuestions);
 
 
-    ArrayList<String> firstQuestionAnswers = new ArrayList<>();
-    firstQuestionAnswers.add("peach");
-    firstQuestionAnswers.add("cauliflower");
-    firstQuestionAnswers.add("walnut");
-    firstQuestionAnswers.add("pea");
-    Question firstQuestion = new multipleChoice("Which of these is not a fruit?", 1);
+    ArrayList<String> firstQuestionAnswers = new ArrayList<>(Arrays.asList("peach", "cauliflower", "walnut", "pea"));
+    String firstQuestionCorrectAnswer = "cauliflower";
+    Question firstQuestion = new multipleChoice("Which of these is not a fruit?", 1, firstQuestionAnswers, firstQuestionCorrectAnswer);
 
-    Question secondQuestion = new trueOrFalse("'A' is the most common letter used in the English language", 1);
+//    Question secondQuestion = new trueOrFalse("'A' is the most common letter used in the English language", 1);
 
 
     startingQuiz.addQuestionToQuiz(firstQuestion);
-
-
-    startingQuiz.printQuestions();
+    startingQuiz.runQuiz();
 
     // add questions to quiz
 

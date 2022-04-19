@@ -8,6 +8,12 @@ public class Computer extends AbstractIdManager {
   private boolean hasBuiltInCamera;
   private boolean isOn;
 
+  public int getDeviceId() {
+    return deviceId;
+  }
+
+  private int deviceId;
+
   /* GETTERS AND SETTERS */
   public int getScreenSize() {
     return screenSize;
@@ -35,6 +41,8 @@ public class Computer extends AbstractIdManager {
 
   public Computer(int screenSize, String amountOfMemory) {
     super();
+    this.deviceId = incrementId();
+//    this.incrementId();
     this.screenSize = screenSize;
     this.amountOfMemory = amountOfMemory;
   }

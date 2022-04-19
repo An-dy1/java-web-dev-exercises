@@ -5,19 +5,26 @@ import java.util.Arrays;
 
 public class trueOrFalse extends Question {
 
-  private boolean answer;
+  private boolean correctAnswer;
 
   public trueOrFalse(String questionText, int aPointValue) {
     super(questionText, aPointValue);
+    // correct answer boolean
+    // possible answers always true or false
   }
 
   @Override
-  public void displayAnswers() {
+  public void displayPossibleAnswers() {
 
   }
 
   @Override
   public int gradeAnswer() {
     return 0;
+  }
+
+  @Override
+  public void getAnswers() {
+
   }
 }
