@@ -10,15 +10,24 @@ public class Runner {
     ArrayList<Question> quizQuestions = new ArrayList<>();
     Quiz startingQuiz = new Quiz(quizQuestions);
 
-
     ArrayList<String> firstQuestionAnswers = new ArrayList<>(Arrays.asList("peach", "cauliflower", "walnut", "pea"));
-    String firstQuestionCorrectAnswer = "cauliflower";
+    // we aren't zero-indexing the correct answer index value here because the users' input choices will start at 1
+    int firstQuestionCorrectAnswer = 2;
     Question firstQuestion = new multipleChoice("Which of these is not a fruit?", 1, firstQuestionAnswers, firstQuestionCorrectAnswer);
 
-//    Question secondQuestion = new trueOrFalse("'A' is the most common letter used in the English language", 1);
+
+    ArrayList<String> secondQuestionAnswers = new ArrayList<>(Arrays.asList("red", "blue", "yellow", "brown"));
+    int secondQuestionCorrectAnswer = 4;
+    Question secondQuestion = new multipleChoice("Which M&M color is the rarest?", 1, secondQuestionAnswers, secondQuestionCorrectAnswer);
+
+
+    Question thirdQuestion = new trueOrFalse("'A' is the most common letter used in the English language", 1, 2);
 
 
     startingQuiz.addQuestionToQuiz(firstQuestion);
+    startingQuiz.addQuestionToQuiz(secondQuestion);
+    startingQuiz.addQuestionToQuiz(thirdQuestion);
+
     startingQuiz.runQuiz();
 
     // add questions to quiz

@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class multipleChoice extends Question {
 
   ArrayList<String> possibleAnswers;
-  String correctAnswer;
+  int correctAnswer;
 
-  public multipleChoice(String questionText, int aPointValue, ArrayList<String> possibleAnswers, String correctAnswer) {
+  public multipleChoice(String questionText, int aPointValue, ArrayList<String> possibleAnswers, int correctAnswer) {
     super(questionText, aPointValue);
     this.possibleAnswers = possibleAnswers;
     this.correctAnswer = correctAnswer;
@@ -23,13 +23,19 @@ public class multipleChoice extends Question {
   }
 
   @Override
-  public int gradeAnswer() {
-    return 0;
+  public int gradeAnswer(int answer) {
+    if(answer == correctAnswer) {
+      return 1;
+    } else {
+      return 0;
+    }
   }
 
   @Override
-  public void getAnswers() {
+  public int getAnswers() {
     Scanner answers = new Scanner(System.in);
-    System.out.println();
+    System.out.println("Please enter the number of the answer you would like to pick: ");
+    int answer = Integer.parseInt(answers.nextLine());
+    return answer;
   }
 }

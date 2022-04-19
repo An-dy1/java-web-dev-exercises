@@ -16,6 +16,7 @@ public abstract class Question {
   }
 
   public void printQuestion() {
+    System.out.println("======================");
     System.out.println(questionText);
   }
 
@@ -30,9 +31,9 @@ public abstract class Question {
 
   public abstract void displayPossibleAnswers();
 
-  public abstract int gradeAnswer();
+  public abstract int gradeAnswer(int answer);
 
-  public abstract void getAnswers();
+  public abstract int getAnswers();
 
 
 }
