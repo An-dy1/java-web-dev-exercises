@@ -23,10 +23,14 @@ public class Runner {
 
     Question thirdQuestion = new trueOrFalse("'A' is the most common letter used in the English language", 1, 2);
 
+    ArrayList<String> fourthQuestionAnswers = new ArrayList<>(Arrays.asList("blueberry", "grape", "watermelon", "strawberry"));
+    ArrayList<Integer> fourthQuestionCorrect = new ArrayList<>(Arrays.asList(2, 4));
+    Question fourthQuestion = new checkBox("Which were the original flavors of nerds?", 1, fourthQuestionAnswers, fourthQuestionCorrect);
 
-    startingQuiz.addQuestionToQuiz(firstQuestion);
-    startingQuiz.addQuestionToQuiz(secondQuestion);
-    startingQuiz.addQuestionToQuiz(thirdQuestion);
+//    startingQuiz.addQuestionToQuiz(firstQuestion);
+//    startingQuiz.addQuestionToQuiz(secondQuestion);
+//    startingQuiz.addQuestionToQuiz(thirdQuestion);
+    startingQuiz.addQuestionToQuiz(fourthQuestion);
 
     startingQuiz.runQuiz();
 
