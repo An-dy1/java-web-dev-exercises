@@ -1,11 +1,13 @@
 package org.launchcode.java.studios.quiz;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class checkBox extends Question {
 
   private ArrayList<String> possibleAnwers;
   private ArrayList<Integer> correctAnswers;
+
 
   public checkBox(String questionText, int aPointValue, ArrayList<String> possibleAnswers, ArrayList<Integer> correctAnswers) {
     super(questionText, aPointValue);
@@ -29,6 +31,22 @@ public class checkBox extends Question {
 
   @Override
   public int getAnswers() {
-    return 0;
+    ArrayList<Integer> usersAnswers = new ArrayList<>();
+    System.out.println("Enter your first answer by entering its number (1, 2, 3 or 4).");
+    Scanner userAnswer = new Scanner(System.in);
+    String anAnswer;
+    do {
+      anAnswer = userAnswer.nextLine();
+      System.out.println("anAnswer is: " + anAnswer);
+      usersAnswers.add(Integer.parseInt(anAnswer));
+    } while(anAnswer != "");
+
+    if(usersAnswers == correctAnswers) {
+      System.out.println("Answers are correct");
+      return 1;
+    } else {
+      System.out.println("Answers are incorrect");
+      return 0;
+    }
   }
 }
