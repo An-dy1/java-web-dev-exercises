@@ -1,6 +1,7 @@
 package org.launchcode.java.studios.quiz;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class checkBox extends Question {
@@ -9,8 +10,8 @@ public class checkBox extends Question {
   private ArrayList<Integer> correctAnswers;
 
 
-  public checkBox(String questionText, int aPointValue, ArrayList<String> possibleAnswers, ArrayList<Integer> correctAnswers) {
-    super(questionText, aPointValue);
+  public checkBox(String questionText, ArrayList<String> possibleAnswers, ArrayList<Integer> correctAnswers) {
+    super(questionText);
     this.possibleAnwers = possibleAnswers;
     this.correctAnswers = correctAnswers;
   }
@@ -25,8 +26,8 @@ public class checkBox extends Question {
   }
 
   @Override
-  public int gradeAnswer(int answer) {
-    return 0;
+  public int gradeAnswer(int points) {
+    return points;
   }
 
   @Override
@@ -37,11 +38,18 @@ public class checkBox extends Question {
     String anAnswer;
     do {
       anAnswer = userAnswer.nextLine();
-      System.out.println("anAnswer is: " + anAnswer);
-      usersAnswers.add(Integer.parseInt(anAnswer));
-    } while(anAnswer != "");
+      if(!anAnswer.equals("")) {
+        usersAnswers.add(Integer.parseInt(anAnswer));
+      }
+    } while(!anAnswer.equals(""));
 
-    if(usersAnswers == correctAnswers) {
+    System.out.println("user answers: " + usersAnswers);
+    System.out.println("correct answers: " + correctAnswers);
+
+    // have to grade within the checkbox's get answer function, unlike the other question child types, because the correct answers are an array of ints
+    // could update this to give a point for each correct answer
+
+    if(usersAnswers.equals(correctAnswers)) {
       System.out.println("Answers are correct");
       return 1;
     } else {

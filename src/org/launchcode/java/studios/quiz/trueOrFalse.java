@@ -8,11 +8,9 @@ public class trueOrFalse extends Question {
 
   private int correctAnswer;
 
-  public trueOrFalse(String questionText, int aPointValue, int aCorrectAnswer) {
-    super(questionText, aPointValue);
+  public trueOrFalse(String questionText, int aCorrectAnswer) {
+    super(questionText);
     this.correctAnswer = aCorrectAnswer;
-    // correct answer boolean
-    // possible answers always true or false
   }
 
   @Override

@@ -8,8 +8,8 @@ public class multipleChoice extends Question {
   ArrayList<String> possibleAnswers;
   int correctAnswer;
 
-  public multipleChoice(String questionText, int aPointValue, ArrayList<String> possibleAnswers, int correctAnswer) {
-    super(questionText, aPointValue);
+  public multipleChoice(String questionText, ArrayList<String> possibleAnswers, int correctAnswer) {
+    super(questionText);
     this.possibleAnswers = possibleAnswers;
     this.correctAnswer = correctAnswer;
   }
@@ -35,6 +35,8 @@ public class multipleChoice extends Question {
   public int getAnswers() {
     Scanner answers = new Scanner(System.in);
     System.out.println("Please enter the number of the answer you would like to pick: ");
+
+    // would need to add input validation here
     int answer = Integer.parseInt(answers.nextLine());
     return answer;
   }

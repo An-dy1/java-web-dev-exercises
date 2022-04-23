@@ -3,6 +3,7 @@ package org.launchcode.java.demos.lsn7interfaces;
 import java.util.ArrayList;
 
 public abstract class Ingredient {
+
     private String name;
     private double cost;
     private ArrayList<String> allergens;

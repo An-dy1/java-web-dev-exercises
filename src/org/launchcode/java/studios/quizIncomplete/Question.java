@@ -1,4 +1,4 @@
-package org.launchcode.java.studios.quiz;
+package org.launchcode.java.studios.quizIncomplete;
 
 public abstract class Question {
 
@@ -19,7 +19,6 @@ public abstract class Question {
     System.out.println("======================");
     System.out.println(questionText);
   }
-
 
   public abstract void displayPossibleAnswers();
 
